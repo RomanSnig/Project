@@ -1,0 +1,18 @@
+
+.header{
+  display: flex;
+  background-color: black;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.header a{
+  flex-grow: 1;
+  color: white;
+  font-family: 'Courgette', cursive;
+  text-align: center;
+  text-decoration: none;
+}
+.header a:hover{
+  color: lawngreen;
+}
