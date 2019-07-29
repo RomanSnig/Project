@@ -26,12 +26,15 @@ export class LoginComponent implements OnInit {
 
   }
 
-  authUser(loginForm: LoginInterface) {
+  authUser(loginForm) {
    // return this.authService.loginUser(loginForm).subscribe(() => {
    //   console.log(loginForm);
    // });
-    console.log(loginForm);
     this.router.navigate(['/userPage']);
+    this.authService.loginUser(loginForm).subscribe(() => {
+      // localStorage.setItem('token', data.msg);
+      console.log(loginForm);
+    });
   }
 
 }
