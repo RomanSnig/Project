@@ -9,12 +9,14 @@ import {RouterModule, Routes} from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { LoginComponent } from './components/login/login.component';
 import { PizzasComponent } from './components/pizzas/pizzas.component';
+import { UserPageComponent } from './components/user-page/user-page.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'pizzas', component: PizzasComponent}
+  {path: 'pizzas', component: PizzasComponent},
+  {path: 'userPage', component: UserPageComponent}
 ];
 
 
@@ -25,6 +27,7 @@ const routes: Routes = [
     MainComponent,
     LoginComponent,
     PizzasComponent,
+    UserPageComponent,
   ],
   imports: [
     BrowserModule,

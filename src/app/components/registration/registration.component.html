@@ -9,5 +9,5 @@
     <input type="password" name="password" #passReg="ngModel" [ngStyle]="{border: passReg.invalid && passReg.touched ? 'solid 2px red' : 'solid 1px black'}" placeholder="******" minlength="8" ngModel required>
   </label> <br>
 
-  <button style="font-size: 150%" type='submit' [disabled]="registerForm.invalid">Register me!</button>
+  <button style="font-size: 150%" type='submit' [disabled]="registerForm.invalid" routerLink="/userPage">Register me!</button>
 </form>

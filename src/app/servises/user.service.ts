@@ -11,8 +11,8 @@ export class UserService {
   constructor(
     private http: HttpClient
   ) { }
-  loginUser(): Observable<User[]> {
-    return this.http.get<User[]>('http://localhost:3000/login');
+  loginUser(u: User): Observable<User> {
+    return this.http.post<User>('http://localhost:3000/auth/log', u);
   }
   createUser(u: User): Observable<User> {
     return this.http.post<User>('http://localhost:3000/user/reg', u);
