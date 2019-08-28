@@ -17,4 +17,10 @@ export class UserService {
   createUser(u: User): Observable<User> {
     return this.http.post<User>('http://localhost:3000/user/reg', u);
   }
+  usersById(id) {
+    return this.http.get<User>('http://localhost:3000/userId/' + id);
+  }
+  pizzas(id) {
+    return this.http.get<User>('http://localhost:3000/pizzas/' + id);
+  }
 }

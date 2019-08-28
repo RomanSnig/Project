@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../models/user';
 import {UserService} from '../../servises/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -9,7 +10,9 @@ import {UserService} from '../../servises/user.service';
 })
 export class RegistrationComponent implements OnInit {
   User: User[] = [];
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService,
+              private router: Router
+  ) {
   }
 
   registerForm(
@@ -18,6 +21,7 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
   }
 registerUser(registerForm: User) {
+    this.router.navigate(['/userPage']);
     return this.userService.createUser(registerForm).subscribe((newPerson) => {
        this.User.push(newPerson);
        console.log(newPerson);

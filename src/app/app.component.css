@@ -9,10 +9,23 @@
 .header a{
   flex-grow: 1;
   color: white;
-  font-family: 'Courgette', cursive;
+  /*font-family: 'Courgette', cursive;*/
   text-align: center;
   text-decoration: none;
 }
 .header a:hover{
   color: lawngreen;
+}
+
+@media (max-width: 375px) {
+  body{
+    width: 100%;
+  }
+  .header{
+    display: flex;
+    width: 100%;
+  }
+  .header a{
+    font-size: 60%;
+  }
 }

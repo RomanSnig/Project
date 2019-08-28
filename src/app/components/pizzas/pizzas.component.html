@@ -1,8 +1,21 @@
 <div class="main">
-  <a routerLink="pizzas"> <img src="https://20.ua/media-resize/company_map_item/ekspress-pitstsa-23923.png?timestamp=1463651547" alt="">
-    <br> <div>ПІЦА</div></a>
-  <a href=""> <img src="https://www.sushiya.ua/modules/pages/pictures/fc4eeafb42974c336dc9b4997eba48fa_1123_1514453090.jpg" alt="" style="width: 400px; height: 400px">
-    <br> <div>СУШІ</div></a>
-  <a href=""><img src="https://smartomato.ams3.cdn.digitaloceanspaces.com/uploads/media/photo/108604/BK-1994_SWEEDEN_BURGER_512X512px.png" alt="" style="height: 400px; width: 400px">
-    <br> <div>БУРГЕРИ</div></a>
+  <a routerLink="pizzas"> <img src="https://20.ua/media-resize/company_map_item/ekspress-pitstsa-23923.png?timestamp=1463651547" alt="" class="pizza">
+    <br> <div class="pizza_text">ПІЦА</div></a>
+  <a href="" class="main_target"> <img src="https://www.sushiya.ua/modules/pages/pictures/fc4eeafb42974c336dc9b4997eba48fa_1123_1514453090.jpg" alt="" class="sushi">
+    <br> <div class="sushi_text">СУШІ</div></a>
+  <a href="" class="main_target"><img src="https://smartomato.ams3.cdn.digitaloceanspaces.com/uploads/media/photo/108604/BK-1994_SWEEDEN_BURGER_512X512px.png" alt="" class="burger">
+    <br> <div class="burger_text">БУРГЕРИ</div></a>
+</div>
+
+
+<div class="products">
+  <div *ngFor="let user of users">
+  name: {{user.name}} <br>
+  email: {{user.email}}
+  <hr>
+  </div>
+  {{users | json}}
+  user: {{users.name}} <br>
+  id: {{users.id}}
+  <hr>
 </div>

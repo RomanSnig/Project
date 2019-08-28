@@ -6,6 +6,7 @@ import {User} from '../../models/user';
 
 import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
+import {Token} from '../../models/token';
 
 @Component({
   selector: 'app-login',
@@ -31,8 +32,8 @@ export class LoginComponent implements OnInit {
    //   console.log(loginForm);
    // });
     this.router.navigate(['/userPage']);
-    this.authService.loginUser(loginForm).subscribe(() => {
-      // localStorage.setItem('token', data.msg);
+    this.authService.loginUser(loginForm).subscribe((data) => {
+      localStorage.setItem('token', 'data');
       console.log(loginForm);
     });
   }

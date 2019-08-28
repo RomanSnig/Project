@@ -14,8 +14,54 @@
   font-size: 130%;
   margin-bottom: -10px;
 }
+.pizza{
+  height: 400px;
+  width: 400px;
+}
+.sushi{
+  height: 400px;
+  width: 400px;
+}
+.burger{
+  height: 400px;
+  width: 400px;
+}
 .main a div{
   text-decoration: none;
   color: darkslategray;
   font-size: 130%;
+}
+.products{
+  width: 33%;
+}
+
+@media (max-width: 375px) {
+  .main {
+    display: none;
+    margin: 0;
+  }
+
+  /*.main a {*/
+    /*margin-left: -12px;*/
+  /*}*/
+  /*.main_target{*/
+    /*display: none;*/
+    /*!*width: 150px;*!*/
+  /*}*/
+  /*.sushi{*/
+    /*flex-grow: 1;*/
+    /*width: 100px;*/
+    /*height: 100px;*/
+  /*}*/
+  /*.burger{*/
+    /*width: 100px;*/
+    /*height: 100px;*/
+    /*flex-grow: 1;*/
+  /*}*/
+  /*.sushi_text{*/
+    /*width: 100px;*/
+  /*}*/
+  /*.burger_text{*/
+    /*width: 100px;*/
+  /*}*/
 }

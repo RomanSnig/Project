@@ -4,6 +4,24 @@
   margin-right: 10%;
   margin-left: 10%;
 }
+.main_carousel{
+  display: flex;
+  justify-content: center;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+.team_about{
+  display: flex;
+  justify-content: center;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+.team_photo{
+  display: flex;
+  justify-content: center;
+  margin-right: 10%;
+  margin-left: 10%;
+}
 .main a{
   flex-grow: 1;
   text-align: center;
@@ -29,4 +47,24 @@
 .social{
   flex-grow: 1;
   text-align: center;
+}
+
+@media (max-width: 375px) {
+  .main {
+    display: block;
+    margin: 0;
+  }
+  .main a{
+    margin-left: -12px;
+  }
+  .main_carousel {
+    display: none;
+  }
+  .team_about{
+    text-align: center;
+  }
+  .team_photo img{
+    /*margin: 0;*/
+    width: 100%;
+  }
 }
