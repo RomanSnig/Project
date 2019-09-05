@@ -1,7 +1,10 @@
 
 <h2>Welcome to your page</h2>
 
-
+<!--<div *ngIf="!isTokenPresent">-->
+  <!--<button>LOGIN ME</button>-->
+  <!--<button>REGISTER ME</button>-->
+<!--</div>-->
 <!--<li *ngFor="let user of users">-->
   <!--<div>{{user.name}} <br> {{user.email}}</div>-->
 <!--</li>-->
@@ -18,7 +21,22 @@
     <!--{{users | json}}-->
   <!--</li>-->
 <!--</ul>-->
-<hr>
-{{users | json}}
+<!--<hr>-->
+<!--{{users | json}}-->
 <br>
-{{users.name}}
+<!--Welcome to your page: {{users.name}}-->
+Welcome to your page: {{isTokenPresent.name}}
+
+<br>
+
+<button (click)="Exit()">Exit!!</button>
+
+<!--{{user}}-->
+
+<!--<li *ngFor="let nice of isTokenPresent">-->
+  <!--{{nice.name}}-->
+<!--</li>-->
+<!--{{isTokenPresent | json}}-->
+
+
+

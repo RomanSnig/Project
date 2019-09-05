@@ -7,6 +7,7 @@ import {User} from '../../models/user';
 import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
 import {Token} from '../../models/token';
+import {ApiRes} from '../../models/ApiRes';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,12 @@ import {Token} from '../../models/token';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  // users: User = {
+  //   name: '',
+  //   email: '',
+  //   // password: 'll',
+  //   id: 1,
+  // };
 
   // loginForm: FormGroup;
 
@@ -24,18 +31,26 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
   authUser(loginForm) {
-   // return this.authService.loginUser(loginForm).subscribe(() => {
-   //   console.log(loginForm);
-   // });
-    this.router.navigate(['/userPage']);
-    this.authService.loginUser(loginForm).subscribe((data) => {
-      localStorage.setItem('token', 'data');
+    // return this.authService.loginUser(loginForm).subscribe(() => {
+    //   console.log(loginForm);
+    // });
+    this.authService.loginUser(loginForm).subscribe((data: ApiRes) => {
+      // localStorage.setItem('token', 'res');
+      console.log(data.success);
+      console.log(data.msg);
+      console.log(data.user);
+      // if (data.success === true) {
+      localStorage.setItem('token', JSON.stringify(data.user));
+      // localStorage.setItem('token', JSON.stringify(data.msg));
+      // }
+      // localStorage.setItem('token', data.msg);
+      console.log(localStorage);
       console.log(loginForm);
+      console.log(data);
+      this.router.navigate(['/userPage']);
     });
   }
-
 }

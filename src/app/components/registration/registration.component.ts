@@ -21,10 +21,10 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
   }
 registerUser(registerForm: User) {
-    this.router.navigate(['/userPage']);
     return this.userService.createUser(registerForm).subscribe((newPerson) => {
        this.User.push(newPerson);
        console.log(newPerson);
+       this.router.navigate(['/userPage']);
     });
 }
 }

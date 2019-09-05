@@ -3,15 +3,14 @@
   <!--<a routerLink="/"><h2>LOGO</h2></a>-->
   <a routerLink="/"><img src="https://3maximum.com/wp-content/uploads/2019/03/picca2.jpg" alt="" style="width: 65px; height: 65px"></a>
   <a href="">FIND</a>
-  <a href="">FEEDBACK</a>
+  <a routerLink="/feedback">FEEDBACK</a>
   <a href="#aboutUs">ABOUT US</a>
-  <a routerLink="/registration">Зареєструватися</a>
-  <a routerLink="/userPage">Моя сторінка</a>
+  <a routerLink="/registration" *ngIf="!isTokenPresent">Зареєструватися</a>
+  <a routerLink="/userPage" *ngIf="isTokenPresent">Моя сторінка</a>
   <a href="">SOCKET</a>
-  <a routerLink="/login">Вхід</a>
+  <a routerLink="/login" *ngIf="!isTokenPresent">Вхід</a>
   <a href="">FIND US</a>
 </div>
-
 <router-outlet></router-outlet>
 
 

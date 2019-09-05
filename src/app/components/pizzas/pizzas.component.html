@@ -10,12 +10,16 @@
 
 <div class="products">
   <div *ngFor="let user of users">
-  name: {{user.name}} <br>
-  email: {{user.email}}
-  <hr>
+    <div class="user">
+      name: {{user.name}} <br>
+      email: {{user.email}} <br>
+      img: <img src="" alt="">
+    </div>
+  <!--<hr>-->
+  <!--</div>-->
+  <!--{{users | json}}-->
+  <!--user: {{users.name}} <br>-->
+  <!--id: {{users.id}}-->
+  <!--<hr>-->
   </div>
-  {{users | json}}
-  user: {{users.name}} <br>
-  id: {{users.id}}
-  <hr>
 </div>

@@ -10,13 +10,15 @@ import { MainComponent } from './components/main/main.component';
 import { LoginComponent } from './components/login/login.component';
 import { PizzasComponent } from './components/pizzas/pizzas.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
   {path: 'pizzas', component: PizzasComponent},
-  {path: 'userPage', component: UserPageComponent}
+  {path: 'userPage', component: UserPageComponent},
+  {path: 'feedback', component: FeedbackComponent}
 ];
 
 
@@ -28,6 +30,7 @@ const routes: Routes = [
     LoginComponent,
     PizzasComponent,
     UserPageComponent,
+    FeedbackComponent,
   ],
   imports: [
     BrowserModule,
