@@ -1,6 +1,9 @@
 export interface Product {
   name: string;
-  email: string;
+  comment: string;
   id: number;
-  photo: string;
+  image: string;
+  price: number;
+  quantity?: number;
+  quantityStorage?: number;
 }

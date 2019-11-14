@@ -1,0 +1,124 @@
+<!--<button class="open-button" onclick="openForm()">Подпишитесь</button>-->
+
+<!--<div class="form-popup" id="myForm">-->
+  <!--<form action="#" class="form-container">-->
+    <!--<h1>Подписаться</h1>-->
+
+    <!--<label><b>Имя</b></label>-->
+    <!--<input type="text" placeholder="Ваше имя" name="name" required>-->
+
+    <!--<label><b>Е-мейл</b></label>-->
+    <!--<input type="text" placeholder="Ваш е-мейл" name="email" required>-->
+
+    <!--<button type="submit" class="btn">Отправить</button>-->
+    <!--<button type="button" class="btn cancel" onclick="closeForm()">Закрыть</button>-->
+  <!--</form>-->
+<!--</div>-->
+
+
+<!--<div #modal class="modal modal-fixed-footer">-->
+  <!--<div class="modal-content">-->
+    <!--<h4 class="mb1">Ваш заказ</h4>-->
+    <!--<table class="highlight">-->
+      <!--<thead>-->
+      <!--<tr>-->
+        <!--<th>Название</th>-->
+        <!--<th>Количество</th>-->
+        <!--<th>Цена</th>-->
+        <!--<th></th>-->
+      <!--</tr>-->
+      <!--</thead>-->
+
+      <!--<tbody>-->
+      <!--<tr>-->
+        <!--<td>Alvin</td>-->
+        <!--<td>3</td>-->
+        <!--<td>$0.87</td>-->
+        <!--<td><i class="material-icons pointer">delete</i></td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<td>Alan</td>-->
+        <!--<td>1</td>-->
+        <!--<td>$3.76</td>-->
+        <!--<td><i class="material-icons pointer">delete</i></td>-->
+
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<td>Jonathan</td>-->
+        <!--<td>2</td>-->
+        <!--<td>$7.00</td>-->
+        <!--<td><i class="material-icons pointer">delete</i></td>-->
+      <!--</tr>-->
+      <!--</tbody>-->
+    <!--</table>-->
+    <!--<div class="order-summary">-->
+      <!--<p>Общая стоимость <strong>22 231 руб.</strong></p>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="modal-footer">-->
+    <!--<button-->
+      <!--class="modal-action waves-effect waves-black btn-flat">-->
+      <!--&lt;!&ndash;(click)="cancel()"&ndash;&gt;-->
+    <!--&gt;Отмена</button>-->
+    <!--<button-->
+      <!--class="modal-action btn waves-effect">-->
+      <!--&lt;!&ndash;(click)="submit()"&ndash;&gt;-->
+    <!--&gt;Подтвердить</button>-->
+  <!--</div>-->
+<!--</div>-->
+
+<div class="modal-content">
+  <h4 class="mb1">Замовлення</h4>
+  <table class="highlight">
+    <thead>
+    <tr>
+      <th>Назва</th>
+      <th>Кількість</th>
+      <th>Ціна</th>
+      <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <!--<tr *ngFor="let item of order.list">-->
+      <!--<td>{{item.name}}</td>-->
+      <!--<td>{{item.quantity}}</td>-->
+      <!--<td>{{item.prise}}</td>-->
+      <!--<td><i class="material-icons pointer" (click)="removePosition(item)">delete</i></td>-->
+    <!--</tr>-->
+    <tr *ngFor="let item of product">
+      <td>{{item.name}}</td>
+      <td>{{item.quantityStorage}}</td>
+      <td>{{item.price}}</td>
+      <td><button  (click)="deleteOrder(item)"><i class="material-icons pointer">delete</i></button></td>
+    </tr>
+    <!--<tr>-->
+      <!--<td>{{product.name}}</td>-->
+      <!--<td>{{product.quantity}}</td>-->
+      <!--<td>{{product.price}}</td>-->
+      <!--<td><i class="material-icons pointer" (click)="removePosition(item)">delete</i></td>-->
+    <!--</tr>-->
+
+    </tbody>
+  </table>
+  <div class="order-summary">
+    <p>Всьго <strong>{{totalPrice}} грн.</strong></p>
+  </div>
+</div>
+<div *ngIf="!event && product" style="display: flex; justify-content: center; margin-top: 20px;"><button class="main_button" (click)="socketEvent()">NEXT</button></div>
+<div *ngIf="!userProduct" style="font-size: 150%"><h2><b>Будь ласка зробіть своє замовлення!!</b></h2></div>
+<!--<div *ngIf="event"><button class="main_button" (click)="socketEvent()">Back</button></div>-->
+<div class="about_person" *ngIf="event">
+  <form #orderForm ="ngForm" (ngSubmit)="sendOrder(orderForm.form.value)">
+    <input type="text" name="name" placeholder="Your name" required ngModel> <br>
+    <input type="number" name="number" placeholder="Your phone number" minlength="5" ngModel required> <br>
+    <input type="text" name="street" placeholder="Your street" required ngModel>
+    <input type="number" name="streetNumber" placeholder="№" required ngModel> <br>
+    <input type="text" name="entrance" placeholder="Entrance" ngModel>
+    <input type="text" name="flat" placeholder="Flat" ngModel>
+    <input type="text" name="apartment" placeholder="Apartment" ngModel>
+    <!--<button type='submit' [disabled]="orderForm.invalid" (click)="sendOrder()">Order</button>-->
+    <button type='submit' [disabled]="orderForm.invalid">Order</button>
+  </form>
+</div>
+

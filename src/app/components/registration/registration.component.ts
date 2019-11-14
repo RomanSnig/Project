@@ -15,15 +15,16 @@ export class RegistrationComponent implements OnInit {
   ) {
   }
 
-  registerForm(
-  ) {
-}
+//   registerForm(
+//   ) {
+// }
   ngOnInit() {
   }
 registerUser(registerForm: User) {
     return this.userService.createUser(registerForm).subscribe((newPerson) => {
        this.User.push(newPerson);
        console.log(newPerson);
+       localStorage.setItem('token', JSON.stringify(newPerson.msg));
        this.router.navigate(['/userPage']);
     });
 }

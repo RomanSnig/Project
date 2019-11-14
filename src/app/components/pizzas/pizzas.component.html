@@ -1,19 +1,23 @@
 <div class="main">
   <a routerLink="pizzas"> <img src="https://20.ua/media-resize/company_map_item/ekspress-pitstsa-23923.png?timestamp=1463651547" alt="" class="pizza">
     <br> <div class="pizza_text">ПІЦА</div></a>
-  <a href="" class="main_target"> <img src="https://www.sushiya.ua/modules/pages/pictures/fc4eeafb42974c336dc9b4997eba48fa_1123_1514453090.jpg" alt="" class="sushi">
+  <a href="" class="main_target"> <img src="http://www.vairaksaules.lv/allfiles/edieni/big/philadelphia-maki-882.jpg?2017-05-17%2002:27:07" alt="" class="sushi">
     <br> <div class="sushi_text">СУШІ</div></a>
   <a href="" class="main_target"><img src="https://smartomato.ams3.cdn.digitaloceanspaces.com/uploads/media/photo/108604/BK-1994_SWEEDEN_BURGER_512X512px.png" alt="" class="burger">
     <br> <div class="burger_text">БУРГЕРИ</div></a>
 </div>
 
-
 <div class="products">
-  <div *ngFor="let user of users">
+  <div *ngFor="let product of product">
     <div class="user">
-      name: {{user.name}} <br>
-      email: {{user.email}} <br>
-      img: <img src="" alt="">
+      name: {{product.name}} <br>
+       <img [src]="product.image" alt=""> <br>
+      {{product.comment}} <br>
+      <!--{{user.image}}-->
+      <br>
+      <input type="number" autocomplete="on" name="quantity" min="1" [(ngModel)]="product.quantity" placeholder="введіть к-ть">
+      <br>
+      <button [disabled]="!product.quantity" (click)="Buy(product)">price: {{product.price}}</button>
     </div>
   <!--<hr>-->
   <!--</div>-->

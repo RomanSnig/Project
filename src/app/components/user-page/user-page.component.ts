@@ -19,12 +19,13 @@ export class UserPageComponent implements OnInit {
 //   password: ''
 // }];
 //   user = localStorage.getItem('token');
- users: User = {
-   name: '',
-   email: '',
-   // password: 'll',
-   id: null
- };
+//  users: User = {
+//    name: '',
+//    email: '',
+//    // password: 'll',
+//    id: null,
+//    msg: null
+//  };
  isTokenPresent = {
    id: '',
    name: ''
@@ -52,12 +53,12 @@ userId = 1;
     //   this.users = data;});
     const getItem = localStorage.getItem('token');
     this.isTokenPresent = JSON.parse(getItem);
-    this.usersById(9);
+    // this.usersById(9);
   }
-  usersById(id) {
-    this.dataService.usersById(id).subscribe((res: User) => {
-      this.users = res;
-      console.log(this.users);
-    });
-  }
+  // usersById(id) {
+  //   this.dataService.usersById(id).subscribe((res: User) => {
+  //     this.users = res;
+  //     console.log(this.users);
+  //   });
+  // }
 }

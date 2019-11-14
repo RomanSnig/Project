@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { PizzasComponent } from './components/pizzas/pizzas.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { SocketComponent } from './components/socket/socket.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'pizzas', component: PizzasComponent},
   {path: 'userPage', component: UserPageComponent},
-  {path: 'feedback', component: FeedbackComponent}
+  {path: 'feedback', component: FeedbackComponent},
+  {path: 'socket', component: SocketComponent}
 ];
 
 
@@ -31,6 +33,7 @@ const routes: Routes = [
     PizzasComponent,
     UserPageComponent,
     FeedbackComponent,
+    SocketComponent,
   ],
   imports: [
     BrowserModule,

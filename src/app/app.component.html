@@ -7,10 +7,11 @@
   <a href="#aboutUs">ABOUT US</a>
   <a routerLink="/registration" *ngIf="!isTokenPresent">Зареєструватися</a>
   <a routerLink="/userPage" *ngIf="isTokenPresent">Моя сторінка</a>
-  <a href="">SOCKET</a>
+  <a routerLink="/socket">SOCKET</a>
   <a routerLink="/login" *ngIf="!isTokenPresent">Вхід</a>
   <a href="">FIND US</a>
 </div>
+<br> <br> <br>
 <router-outlet></router-outlet>
 
 

@@ -7,9 +7,10 @@ import {filter} from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'Project';
   isTokenPresent: any;
+  socket: any;
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router
@@ -20,5 +21,6 @@ export class AppComponent implements OnInit{
       this.isTokenPresent = localStorage.getItem('token');
     });
     this.isTokenPresent = localStorage.getItem('token');
+    this.socket = localStorage.getItem('product');
   }
 }
